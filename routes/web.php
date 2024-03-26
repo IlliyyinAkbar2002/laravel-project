@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\RestaurantController;
+use App\Models\Restaurant;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,13 @@ use Illuminate\Support\Facades\Route;
 //     return view('index');
 // });
 
+// Route::get('/', function() {
+//     return view('index', [
+//         "title" => "Home",
+//         "description" => restaurant::all()
+//     ]);
+// });
+
 Route::get('/index', function () {
     return view('index');
 });
@@ -29,11 +38,10 @@ Route::get('/about', function () {
 
 Route::get('/contact', function () {
     return view('contact', [
-        "name" => "Muhammad Fauzan",
-        "email" => "fauzan@gmail.com",
-        "phone" => "08123456789",
+        "restaurant" => Restaurant::getAllRestaurants()
     ]);
 });
+
 
 Route::get('/login', function () {
     return view('login', [
