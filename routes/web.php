@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Restaurant as ControllersRestaurant;
 use App\Http\Controllers\RestaurantController;
 use App\Models\Restaurant;
 use Illuminate\Support\Facades\Route;
@@ -40,11 +41,15 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/contact', function () {
+
+Route::get('/restaurant', [ControllersRestaurant::class, 'SelectDataRestauran'])->name('data_restaurant');
+
+Route::get('/contact/{name}', function ($name) {
+    $restaurant = Restaurant::SelectRestaurant($name);
     return view('contact', [
-        "restaurant" => Restaurant::getAllRestaurants()
+        "data_all" => $restaurant
     ]);
-});
+})->name('contact');
 
 
 Route::get('/login', function () {
