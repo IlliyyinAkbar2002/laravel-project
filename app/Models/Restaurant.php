@@ -9,6 +9,8 @@ class Restaurant extends Model
 {
     use HasFactory;
 
+    protected $table = 'restaurant'; // Explicitly setting the table name
+
     private static $restaurant_list = [
         [
             'name' => "KFC",
