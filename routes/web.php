@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Restaurant as ControllersRestaurant;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\RestaurantControllerData;
 use App\Models\Restaurant;
 use Illuminate\Support\Facades\Route;
+use App\Models\NewRestaurant;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,9 +43,7 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/restaurants', function () {
-    return view('restaurants');
-});
+Route::get('/restaurants', [RestaurantControllerData::class, 'index']);
 
 Route::get('/restaurant', [ControllersRestaurant::class, 'SelectDataRestauran'])->name('data_restaurant');
 
