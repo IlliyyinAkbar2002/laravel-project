@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+// use App\Http\Controllers\Restaurant;
+use App\Models\Restaurant;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +15,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        Restaurant::create([
+            'title' => 'Toko pertama',
+            'slug' => 'toko-pertama',
+            'location' => 'Surabaya',
+            'body' => 'Ini toko terbesar di Surabaya'
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Restaurant::factory(10)->create();
     }
 }
