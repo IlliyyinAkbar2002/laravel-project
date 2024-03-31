@@ -20,7 +20,15 @@ class Restaurant extends Model
         ]
     ];
 
-    public static function getAllRestaurants() {
+    public static function SelectRestaurant($select)
+    {
+        $data_all = static::getAllRestaurants();
+        return $data_all->firstWhere('name', $select);
+    }
+
+
+    public static function getAllRestaurants()
+    {
         return collect(self::$restaurant_list);
     }
 }
