@@ -41,6 +41,9 @@ Route::get('/about', function () {
     ]);
 });
 
+Route::get('/restaurants', function () {
+    return view('restaurants');
+});
 
 Route::get('/restaurant', [ControllersRestaurant::class, 'SelectDataRestauran'])->name('data_restaurant');
 
