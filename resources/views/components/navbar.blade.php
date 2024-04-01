@@ -9,11 +9,8 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{url('/')}}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown
                     </a>
                     <ul class="dropdown-menu">
@@ -21,11 +18,9 @@
                         <li><a class="dropdown-item" href="{{url('/about')}}">About</a></li>
                         <li><a class="dropdown-item" href="{{url('/restaurants')}}">Restaurant</a></li>
                         <li><a class="dropdown-item" href="{{url('/contact')}}">Contact</a></li>
+                        <li><a class="dropdown-item" href="{{url('/crud')}}">Crud Operation</a></li>
                         <li><a class="dropdown-item" href="{{url('/login')}}">Login</a></li>
                     </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
