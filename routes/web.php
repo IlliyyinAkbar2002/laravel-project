@@ -37,6 +37,10 @@ Route::get('/index', function () {
     return view('index');
 });
 
+Route::get('/crud', function () {
+    return view('crud');
+});
+
 Route::get('/about', function () {
     return view('about', [
         "name" => "Muhammad Fauzan",
